@@ -92,12 +92,18 @@ console.log("Hello World!");
         setAutoRun={setAutoRun}
       />
       <div className="w-full flex-1 flex" id="editor">
-        {htmlDisplay && (
-          <HTMLArea htmlCode={htmlCode} setHtmlCode={setHtmlCode} />
-        )}
-        {cssDisplay && <CSSArea cssCode={cssCode} setCssCode={setCssCode} />}
-        {jsDisplay && <JSArea jsCode={jsCode} setJsCode={setJsCode} />}
-        {outputDisplay && <OutputArea outputHtml={outputHtml} />}
+        <HTMLArea
+          htmlCode={htmlCode}
+          setHtmlCode={setHtmlCode}
+          display={htmlDisplay}
+        />
+        <CSSArea
+          cssCode={cssCode}
+          setCssCode={setCssCode}
+          display={cssDisplay}
+        />
+        <JSArea jsCode={jsCode} setJsCode={setJsCode} display={jsDisplay} />
+        <OutputArea outputHtml={outputHtml} display={outputDisplay} />
         {htmlDisplay || cssDisplay || jsDisplay || outputDisplay || (
           <img
             src={logo}

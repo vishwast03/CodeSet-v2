@@ -1,6 +1,12 @@
 const OutputArea = (props) => {
+  const display = props.display;
+
   return (
-    <div className="h-full flex-1 border border-[#3aafa9] flex flex-col">
+    <div
+      className={`h-full flex-1 border border-[#3aafa9] flex flex-col ${
+        display ? "block" : "hidden"
+      }`}
+    >
       <div className="text-[#3aafa9] py-1 px-4 border-b-2 border-gray-200">
         Output
       </div>

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 const CSSArea = (props) => {
+  const display = props.display;
+
   // using useEffect hook to execute code as soon as the component is mounted
   useEffect(() => {
     // initializing the css editor
@@ -39,7 +41,11 @@ const CSSArea = (props) => {
   }, []);
 
   return (
-    <div className="h-full flex-1 border border-[#3aafa9] flex flex-col">
+    <div
+      className={`h-full flex-1 border border-[#3aafa9] flex flex-col ${
+        display ? "block" : "hidden"
+      }`}
+    >
       <div className="text-[#3aafa9] py-1 px-4 border-b-2 border-gray-200">
         CSS
       </div>

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 const JSArea = (props) => {
+  const display = props.display;
+
   // using useEffect hook to execute code as soon as the component is mounted
   useEffect(() => {
     // initializing the js editor
@@ -35,11 +37,15 @@ const JSArea = (props) => {
     // saving the code to localStorage before the component is unmounted
     return () => {
       localStorage.setItem("jsCode-CodeSet", jsEditor.getValue());
-    }
+    };
   }, []);
 
   return (
-    <div className="h-full flex-1 border border-[#3aafa9] flex flex-col">
+    <div
+      className={`h-full flex-1 border border-[#3aafa9] flex flex-col ${
+        display ? "block" : "hidden"
+      }`}
+    >
       <div className="text-[#3aafa9] py-1 px-4 border-b-2 border-gray-200">
         JavaScript
       </div>
